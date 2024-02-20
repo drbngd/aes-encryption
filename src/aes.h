@@ -7,6 +7,8 @@ class AES {
 public:
     AES(const std::string& plaintext, const std::array<std::string, 2>& keys);
     static void Encrypt(uint8_t num_rounds);
+
+    // print functions
     static void DisplayStateMatrix();
     static void DisplayKeyMatrix();
 
@@ -16,17 +18,17 @@ private:
     static void ShiftRows();
     static void MixColumns();
     static void AddKey(uint8_t num_round);
-    //static void GenerateSubkeys();
+    /*static void GenerateSubkeys();*/
 
-    // accessors & mutators
-    static std::string get_subkeys(uint8_t num_rounds);
+    // accessors & mutators - not used at the moment
+    /*static std::string get_subkeys(uint8_t num_rounds);
     static std::array<std::array<uint8_t, 4>, 4> get_state_matrix();
     static std::array<std::array<uint8_t, 4>, 4> get_key_matrix();
-    static void set_state_matrix(const std::array<std::array<uint8_t, 4>, 4>& matrix);
+    static void set_state_matrix(const std::array<std::array<uint8_t, 4>, 4>& matrix);*/
 
     // helper methods
     static std::array<std::array<uint8_t, 4>, 4> XOR(const std::array<std::array<uint8_t, 4>, 4>& a, const std::array<std::array<uint8_t, 4>, 4>& b);
-    static uint8_t GF28Multiply(uint8_t &a, uint8_t& b);
+    static uint8_t GF28Multiply(uint8_t a, uint8_t b);
     static std::array<std::array<uint8_t, 4>, 4> MatrixMultiply(const std::array<std::array<uint8_t, 4>, 4>& a, const std::array<std::array<uint8_t, 4>, 4>& b);
     static std::array<std::array<uint8_t, 4>, 4> StringToAsciiMatrix(const std::string& str);
     static std::array<std::array<uint8_t, 4>, 4> IntStringToMatrix(const std::string &str);
@@ -41,8 +43,8 @@ private:
            {0x01, 0x02, 0x03, 0x01},
            {0x01, 0x01, 0x02, 0x03},
            {0x03, 0x01, 0x01, 0x02}
-   }};
-    static constexpr std::array<uint8_t, 256> SBox= {{
+    }};
+   static constexpr std::array<uint8_t, 256> SBox= {
             0x63, 0x7C, 0x77, 0x7B, 0xF2, 0x6B, 0x6F, 0xC5, 0x30, 0x01, 0x67, 0x2B, 0xFE, 0xD7, 0xAB, 0x76,
             0xCA, 0x82, 0xC9, 0x7D, 0xFA, 0x59, 0x47, 0xF0, 0xAD, 0xD4, 0xA2, 0xAF, 0x9C, 0xA4, 0x72, 0xC0,
             0xB7, 0xFD, 0x93, 0x26, 0x36, 0x3F, 0xF7, 0xCC, 0x34, 0xA5, 0xE5, 0xF1, 0x71, 0xD8, 0x31, 0x15,
@@ -59,8 +61,7 @@ private:
             0x70, 0x3E, 0xB5, 0x66, 0x48, 0x03, 0xF6, 0x0E, 0x61, 0x35, 0x57, 0xB9, 0x86, 0xC1, 0x1D, 0x9E,
             0xE1, 0xF8, 0x98, 0x11, 0x69, 0xD9, 0x8E, 0x94, 0x9B, 0x1E, 0x87, 0xE9, 0xCE, 0x55, 0x28, 0xDF,
             0x8C, 0xA1, 0x89, 0x0D, 0xBF, 0xE6, 0x42, 0x68, 0x41, 0x99, 0x2D, 0x0F, 0xB0, 0x54, 0xBB, 0x16
-    }};
-
+    };
 };
 
 #endif // AES_H

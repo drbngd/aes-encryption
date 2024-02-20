@@ -3,10 +3,6 @@
 ## Overview
 This project implements the first round of the Advanced Encryption Standard (AES) encryption, focusing on demonstrating the initial steps of the encryption process using a given 128-bit message and two subkeys.
 
-## Requirements
-- Programming Languages: C/C++ or Python
-- Compatibility: Ensure the program is compatible with both Linux and Windows environments.
-
 ## Project Structure
 - `src/`: Contains all the source and header files.
 - `build/`: Contains compiled object and executable files.
@@ -14,10 +10,9 @@ This project implements the first round of the Advanced Encryption Standard (AES
 - `report.pdf`: A detailed report of the project implementation and outputs.
 
 ## How to Compile and Run
-(Include specific commands and steps for compilation and execution here, tailored to your chosen programming language and environment.)
+Run the following commands in the terminal to compile and run the program:
 
-## Contributing
-(Instructions for how others can contribute to the project, if applicable.)
+```cmake -S . -B build```
+```./build/aes```
 
-## License
-(Include license information here, if applicable.)
+cmake --build /Users/drbngd/Documents/UC/14_2024_SPR/CS5153/aes_m13272240/cmake-build-debug --target aes_m13272240 -j 8
