@@ -15,4 +15,4 @@ Run the following commands in the terminal to compile and run the program:
 ```cmake -S . -B build```
 ```./build/aes```
 
-cmake --build /Users/drbngd/Documents/UC/14_2024_SPR/CS5153/aes_m13272240/cmake-build-debug --target aes_m13272240 -j 8
+cmake --build cmake-build-debug --target aes -j 8
